@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 FILE* readFile(char *fileName);
-
-
+void writeFile(char *fileName, char *content);
+// char *fn(char *fileName);
 
 #endif //ASSEMBLER_FILEREAD_H

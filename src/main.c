@@ -6,10 +6,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "main.h"
 #include "whatever.h"
-
-
+#include <ctype.h>
+#include "symtab.h"
 /// here wr assume that the line is formatted and its second time so only numer
 char* trans(char* inst) {
     static char ot[17];
@@ -20,9 +20,26 @@ char* trans(char* inst) {
 
     /////// a instruction: @value
     if (inst[0] == '@') {
-        int val = atoi(inst + 1);
+        char *symbol = inst + 1;
+        int val;
+        if (isdigit(symbol[0])) {
+            // It's a literal number like @100
+            val = atoi(symbol);
+        } else {
+            // It's a symbol (Label or Variable)
+            val = symtab_get_address(symbol);
+
+            if (val == -1) {
+                // It's a new variable!
+                // According to the Hack spec, these start at RAM 16.
+                static int next_var_addr = 16;
+                symtab_add(symbol, next_var_addr);
+                val = next_var_addr;
+                next_var_addr++;
+            }
+        }
         for (int i = 15; i >= 1; i--) {
-            ot[i] = (val % 2) + '0'; /// why is CLION showing tantrums
+            ot[i] = (val % 2) + '0'; /// why is CLION showing tantrums .... (after 1 hour) ohh number letter
             val /= 2;
         }
         ot[0] = '0';
