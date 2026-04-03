@@ -83,6 +83,9 @@ char* trans(char* inst) {
             comp_bin = MAP[i].bini;
             break;
         }
+        else {
+            fprintf(stderr, "INPUT ERROR %s", MAP[i].whatever);
+        }
     }
 
     // manzil bits

@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic -Wl,--dependency-file=CMakeFiles/assemble.dir/link.d CMakeFiles/assemble.dir/src/fileread.c.o CMakeFiles/assemble.dir/src/main.c.o CMakeFiles/assemble.dir/src/parser.c.o CMakeFiles/assemble.dir/src/strim.c.o CMakeFiles/assemble.dir/src/symtab.c.o CMakeFiles/assemble.dir/src/whatever.c.o -o assemble
