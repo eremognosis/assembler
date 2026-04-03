@@ -20,10 +20,10 @@ void writeFile(char *fileName, char *contents)
 // """"""
 /// writes one line
 {
-    char *fn = fileName;
-    fn = strcat(fn, ".asm");
-    FILE *file = fopen(fn, "w");
+    // char *fn = fileName;
+    // fn = strcat(fn, ".hack");
+    FILE *file = fopen(fileName, "a");
     if (file == NULL)
         printf("Error opening file %s\n", fileName);
-    fprintf(file, "%s", contents);
+    fprintf(file, "%s\n", contents);
 }

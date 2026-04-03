@@ -10,6 +10,10 @@
 #include "whatever.h"
 #include <ctype.h>
 #include "symtab.h"
+#include "fileread.h"
+#include "parser.h"
+
+
 /// here wr assume that the line is formatted and its second time so only numer
 char* trans(char* inst) {
     static char ot[17];
@@ -103,6 +107,30 @@ char* trans(char* inst) {
     sprintf(ot, "%s%s%s", comp_bin, dest_bin, jump_bin);
 
     return ot;
+}
+
+
+int main(int argc, char *argv[])
+{
+    char *inst = argv[1];
+
+    symtab_init();
+
+    FILE *f = readFile(inst);
+    firstturn(f);
+
+    char of[128];
+    strcpy(of, inst);
+
+    char *d = strchr(of, '.');
+    if (d)
+    {
+        *d = '\0';
+    }
+    strcat(of, ".hack");
+    int m = secondturn(f, of);
+
+    printf("Success %s -> %s. Processed %d lines including your tantrums in comments \n", inst, of, m);
 }
 
 

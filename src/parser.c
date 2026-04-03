@@ -66,11 +66,11 @@ void firstturn(FILE *stream)
 
 
 
-void secondturn(FILE *stream, char* fn)
+int secondturn(FILE *stream, char* fn)
 {
     char line[BUFFER_SIZE];
     int i = 0;
-
+    FILE *stream2 = fopen(fn, "w");
     while (fgets(line, BUFFER_SIZE, stream) != NULL)
     {
         char* l = strim(line);
@@ -79,10 +79,13 @@ void secondturn(FILE *stream, char* fn)
         if (l[0]=='\0' || (l[0]=='/' && l[1]=='/') || l[0]=='('){continue;} //comment
 
         char* code = trans(l);
-        writeFile(fn, code);
+        // writeFile(fn, code);
+        fprintf(stream2, "%s\n", code);
 
     }
     fclose(stream);
+    fclose(stream2);
+    return i;
     //dome ig
 }
 

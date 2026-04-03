@@ -64,7 +64,7 @@ mapper MAP[MAXXX] = {
 
 
 
-mapper MAPADM[10] = {
+mapper MAPADM[MAXXX] = {
     {"" , "000"},
     {"M" , "001"},
     {"D" , "010"},
@@ -75,7 +75,7 @@ mapper MAPADM[10] = {
     {"AMD" , "111"},
 };
 
-mapper JUMP[10] = {
+mapper JUMP[MAXXX] = {
     {"" , "000"},
     {"JGT" , "001"},
     {"JEQ" , "010"},
