@@ -35,7 +35,7 @@ mapper MAP[MAXXX] = {
 
     // D and A
     {"D+A", "1110000010"},
-    // {"A+D", "0000010"},  //idk for now kets assume no commutivity
+    {"A+D", "1110000010"},  //idk for now kets assume and add commutivity for plus
     {"D-A", "1110010011"},
     {"A-D", "1110000111"},
     {"D&A", "1110000000"},
@@ -43,6 +43,7 @@ mapper MAP[MAXXX] = {
 
     // D and M
     {"D+M", "1111000010"},
+    {"M+D", "1111000010"},
     {"D-M", "1111010011"},
     {"M-D", "1111000111"},
     {"D&M", "1111000000"},
