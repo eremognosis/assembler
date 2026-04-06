@@ -83,9 +83,9 @@ char* trans(char* inst) {
             comp_bin = MAP[i].bini;
             break;
         }
-        else {
-            fprintf(stderr, "INPUT ERROR %s", MAP[i].whatever);
-        }
+        // else {
+        //     fprintf(stderr, "INPUT ERROR %s", MAP[i].whatever);
+        // }
     }
 
     // manzil bits
@@ -133,7 +133,7 @@ int main(int argc, char *argv[])
     strcat(of, ".hack");
     int m = secondturn(f, of);
 
-    printf("Success %s -> %s. Processed %d lines including your tantrums in comments \n", inst, of, m);
+    printf("Success %s -> %s Processed %d lines \n", inst, of, m);
 }
 
 
