@@ -20,7 +20,7 @@
 // first the first turn making the symbol table
 // then the second turn using whatever and the symbol table ti prcess
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 32
 
 void firstturn(FILE *stream)
 {   char line[BUFFER_SIZE];
