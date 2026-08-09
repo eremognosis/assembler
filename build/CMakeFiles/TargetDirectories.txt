@@ -1,3 +1,0 @@
-/home/raj/Codee/assembler/build/CMakeFiles/assemble.dir
-/home/raj/Codee/assembler/build/CMakeFiles/edit_cache.dir
-/home/raj/Codee/assembler/build/CMakeFiles/rebuild_cache.dir
